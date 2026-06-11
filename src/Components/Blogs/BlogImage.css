@@ -1,0 +1,21 @@
+.BlogImage {
+    filter: blur(14px);
+    transform: scale(1.05);
+    transition: filter 0.65s ease, transform 0.65s ease, opacity 0.65s ease;
+    opacity: 0.92;
+}
+
+.BlogImage--loaded {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .BlogImage {
+        filter: none;
+        transform: none;
+        opacity: 1;
+        transition: none;
+    }
+}

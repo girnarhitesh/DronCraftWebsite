@@ -1,0 +1,334 @@
+/* ═══════════════════════════════════════
+   NAVIGATION BAR — transparent → blur on scroll
+═══════════════════════════════════════ */
+.NavigationBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 12px 0;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        padding 0.35s ease;
+}
+
+.NavigationBar--scrolled {
+    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom-color: var(--border-light);
+    box-shadow: 0 4px 24px rgba(1, 26, 50, 0.08);
+}
+
+.NavigationBarInner {
+    width: var(--layout-width);
+    max-width: var(--layout-max);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.NavActions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.NavHomeBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(12, 45, 74, 0.18);
+    background: #ffffff;
+    color: var(--primary-mid);
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.NavHomeBtn:hover {
+    background: var(--surface-soft);
+    border-color: var(--primary-light);
+}
+
+/* ─── Logo ─── */
+.NavLogo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+    line-height: 0;
+}
+
+.NavLogoImg {
+    height: 52px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    display: block;
+    transition: filter 0.35s ease;
+}
+
+/* Slight lift on dark hero so logo reads clearly */
+.NavigationBar:not(.NavigationBar--scrolled) .NavLogoImg {
+    filter: brightness(1.08) drop-shadow(0 1px 6px rgba(0, 0, 0, 0.35));
+}
+
+.NavigationBar--scrolled .NavLogoImg {
+    filter: none;
+}
+
+/* ─── Nav links ─── */
+.NavMenu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+}
+
+.NavList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.NavLink {
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-on-dark);
+    text-decoration: none;
+    padding: 6px 0;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.NavLink::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--text-on-dark);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease, background 0.3s ease;
+}
+
+.NavLink:hover {
+    color: #ffffff;
+}
+
+.NavLink--active::after,
+.NavLink:hover::after {
+    transform: scaleX(1);
+}
+
+.NavigationBar--scrolled .NavLink {
+    color: var(--primary-mid);
+}
+
+.NavigationBar--scrolled .NavLink:hover {
+    color: var(--primary-color);
+}
+
+.NavigationBar--scrolled .NavLink::after {
+    background: var(--primary-light);
+}
+
+/* ─── Book Now — styles change on scroll ─── */
+.NavBookBtn.Btn {
+    flex-shrink: 0;
+    min-height: 44px;
+    padding: 6px 6px 6px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    gap: 10px;
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Transparent hero: glass outline button */
+.NavigationBar:not(.NavigationBar--scrolled) .NavBookBtn.Btn--primary {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--text-on-dark);
+    border: 1.5px solid rgba(255, 255, 255, 0.45);
+    box-shadow: none;
+}
+
+.NavigationBar:not(.NavigationBar--scrolled) .NavBookBtn .BtnIconCircle {
+    background: var(--text-on-dark);
+    color: var(--primary-color);
+    box-shadow: none;
+}
+
+.NavigationBar:not(.NavigationBar--scrolled) .NavBookBtn.Btn--primary:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrolled: solid navy pill */
+.NavigationBar--scrolled .NavBookBtn.Btn--primary {
+    background: linear-gradient(180deg, var(--primary-light) 0%, var(--primary-color) 100%);
+    color: var(--text-on-dark);
+    border: 1.5px solid transparent;
+}
+
+.NavigationBar--scrolled .NavBookBtn .BtnIconCircle {
+    background: var(--text-on-dark);
+    color: var(--primary-color);
+}
+
+.NavigationBar--scrolled .NavBookBtn.Btn--primary:hover {
+    box-shadow: 0 6px 20px rgba(1, 26, 50, 0.35);
+}
+
+.NavBookBtn .BtnIconCircle {
+    width: 30px;
+    height: 30px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+    .NavList {
+        gap: 20px;
+    }
+
+    .NavLink {
+        font-size: 13px;
+    }
+
+    .NavLogoImg {
+        height: 40px;
+        max-width: 130px;
+    }
+}
+
+/* Mobile: logo left, Book Now right — no nav links; always solid white bar */
+@media (max-width: 768px) {
+    .NavigationBar,
+    .NavigationBar.NavigationBar--scrolled {
+        padding: 8px 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border-light);
+        box-shadow: 0 4px 24px rgba(1, 26, 50, 0.08);
+    }
+
+    .NavigationBar .NavLogoImg {
+        filter: none;
+    }
+
+    /* Book Now: always navy pill on mobile — matches scrolled/desktop CTA */
+    .NavigationBar:not(.NavigationBar--scrolled) .NavBookBtn.Btn--primary,
+    .NavigationBar--scrolled .NavBookBtn.Btn--primary {
+        background: linear-gradient(180deg, var(--primary-light) 0%, var(--primary-color) 100%);
+        color: var(--text-on-dark);
+        border: 1.5px solid transparent;
+        box-shadow: none;
+    }
+
+    .NavigationBar:not(.NavigationBar--scrolled) .NavBookBtn .BtnIconCircle,
+    .NavigationBar--scrolled .NavBookBtn .BtnIconCircle {
+        background: var(--text-on-dark);
+        color: var(--primary-color);
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.18);
+    }
+
+    .NavigationBar:not(.NavigationBar--scrolled) .NavBookBtn.Btn--primary:hover,
+    .NavigationBar--scrolled .NavBookBtn.Btn--primary:hover {
+        background: linear-gradient(180deg, var(--primary-light) 0%, var(--primary-color) 100%);
+        border-color: transparent;
+        box-shadow: 0 6px 20px rgba(1, 26, 50, 0.35);
+    }
+
+    .NavigationBar:not(.NavigationBar--scrolled) .NavBookBtn.Btn--primary:hover .BtnIconCircle,
+    .NavigationBar--scrolled .NavBookBtn.Btn--primary:hover .BtnIconCircle {
+        background: var(--text-on-dark);
+        color: var(--primary-color);
+    }
+
+    .NavigationBarInner {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .NavActions {
+        gap: 8px;
+    }
+
+    .NavHomeBtn {
+        min-height: 36px;
+        padding: 0 12px;
+        font-size: 11px;
+    }
+
+    .NavMenu {
+        display: none;
+    }
+
+    .NavLogo {
+        margin-right: auto;
+    }
+
+    .NavLogoImg {
+        height: 38px;
+        max-width: 120px;
+    }
+
+    .NavBookBtn.Btn {
+        min-height: 40px;
+        padding: 5px 5px 5px 14px;
+        font-size: 12px;
+        gap: 8px;
+    }
+
+    .NavBookBtn .BtnIconCircle {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .NavLogoImg {
+        height: 34px;
+        max-width: 108px;
+    }
+
+    .NavBookBtn.Btn {
+        min-height: 38px;
+        padding-left: 12px;
+        font-size: 11px;
+    }
+
+    .NavHomeBtn {
+        min-height: 34px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+}

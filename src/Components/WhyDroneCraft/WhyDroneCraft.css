@@ -1,0 +1,248 @@
+/* ═══════════════════════════════════════
+   WHY DRONECRAFT — reference layout
+═══════════════════════════════════════ */
+.WhyDroneCraft {
+    position: relative;
+    z-index: 2;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.WhyDroneCraftContent {
+    position: relative;
+}
+
+.WhyGrid {
+    display: grid;
+    grid-template-columns: minmax(200px, 0.50fr) minmax(0, 1fr);
+    gap: 40px 40px;
+    align-items: start;
+}
+
+/* ════════════════════════════════
+   LEFT COLUMN
+════════════════════════════════ */
+.WhyLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    justify-content: center;
+}
+
+.WhyEyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.WhyEyebrowLine {
+    width: 28px;
+    height: 3px;
+    background: var(--primary-light);
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.WhyEyebrowText {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--primary-light);
+    line-height: 1;
+}
+
+.WhyHeadings {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.WhyHeading {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(28px, 3.2vw, 38px);
+    font-weight: 800;
+    line-height: 1.12;
+    color: var(--primary-mid);
+    letter-spacing: -0.02em;
+}
+
+.WhyHeadingAccent {
+    color: var(--secondary-color);
+}
+
+.WhyHeadingRule {
+    display: block;
+    width: 44px;
+    height: 3px;
+    margin: 18px 0 20px;
+    background: var(--primary-light);
+    border-radius: 2px;
+}
+
+.WhyCopy {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.WhyParagraph {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-body);
+    line-height: 1.65;
+}
+
+.WhyDecor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.WhyDecorIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-light);
+}
+
+.WhyDecorLine {
+    position: relative;
+    flex: 1;
+    max-width: 120px;
+    height: 1px;
+    background: #c5ced8;
+}
+
+.WhyDecorDot {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary-light);
+}
+
+/* ════════════════════════════════
+   RIGHT COLUMN — 3×2 cards
+════════════════════════════════ */
+.WhyRight {
+    min-width: 0;
+}
+
+.WhyCardsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.WhyCard {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 28px 18px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 6px 28px rgba(1, 26, 50, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.WhyCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(1, 26, 50, 0.11);
+}
+
+.WhyCardIconWrap {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    background: var(--surface-soft);
+    border: 1px solid rgba(1, 26, 50, 0.06);
+    flex-shrink: 0;
+}
+
+.WhyCardAccent {
+    display: block;
+    width: 36px;
+    height: 3px;
+    margin: 14px auto 12px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.WhyCardTitle {
+    margin: 0 0 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary-mid);
+    line-height: 1.25;
+}
+
+.WhyCardDesc {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.55;
+    max-width: 220px;
+}
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media (max-width: 1100px) {
+    .WhyGrid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .WhyLeft {
+        max-width: 100%;
+    }
+
+    .WhyCardsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .WhyCardsGrid {
+        grid-template-columns: 1fr;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .WhyDecorLine {
+        max-width: 80px;
+    }
+    .WhyCardDesc {
+        max-width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .WhyCard {
+        transition: none;
+    }
+
+    .WhyCard:hover {
+        transform: none;
+    }
+}

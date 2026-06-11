@@ -1,0 +1,35 @@
+.WhatsAppFloat {
+    position: fixed;
+    right: 18px;
+    bottom: 20px;
+    z-index: 1200;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #2cd46b 0%, #22b757 100%);
+    color: #ffffff;
+    box-shadow:
+        0 10px 26px rgba(34, 183, 87, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.24) inset;
+    text-decoration: none;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.WhatsAppFloat:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow:
+        0 14px 30px rgba(34, 183, 87, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+}
+
+@media (max-width: 768px) {
+    .WhatsAppFloat {
+        width: 52px;
+        height: 52px;
+        right: 14px;
+        bottom: 16px;
+    }
+}

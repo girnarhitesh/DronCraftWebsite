@@ -1,0 +1,422 @@
+/* ═══════════════════════════════════════════
+   OUR PROMISE — Vision and Aim
+   Theme: primary navy · secondary orange (accent only)
+   Font: Poppins / Bebas Neue
+═══════════════════════════════════════════ */
+
+.OurPromise {
+    position: relative;
+    background: #ffffff;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.OurPromiseContent {
+    position: relative;
+}
+
+/* ════════════════════════
+   SECTION HEADER
+════════════════════════ */
+.OPSectionHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 64px;
+}
+
+.OPEyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.OPEyebrowDash {
+    display: inline-block;
+    width: 22px;
+    height: 2.5px;
+    background: var(--primary-light);
+    border-radius: 2px;
+}
+
+.OPEyebrowText {
+    color: var(--primary-light);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.OPHeading {
+    margin: 0;
+    line-height: 1.08;
+    letter-spacing: 0.005em;
+}
+
+.OPHeadingNavy   { color: var(--primary-mid); }
+.OPHeadingOrange { color: var(--secondary-color); }
+
+.OPSubtitle {
+    max-width: 540px;
+    color: #4a6278;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.65;
+    margin: 2px auto 0;
+}
+
+.OPDivider {
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 4px;
+    opacity: 0.82;
+}
+
+/* ════════════════════════
+   PILLARS WRAPPER
+════════════════════════ */
+.OPPillars {
+    position: relative;
+}
+
+/* Horizontal connector line sitting behind the icon circles */
+.OPConnectorLine {
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    /* icons are 72px tall, card has 32px padding-top → icon center is at 32 + 36 = 68px */
+    top: 68px;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        rgba(12, 45, 74, 0.0) 0%,
+        rgba(12, 45, 74, 0.3) 8%,
+        rgba(12, 45, 74, 0.3) 92%,
+        rgba(12, 45, 74, 0.0) 100%
+    );
+    z-index: 0;
+}
+
+/* ════════════════════════
+   3-COLUMN GRID
+════════════════════════ */
+.OPGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ════════════════════════
+   INDIVIDUAL PILLAR
+════════════════════════ */
+.OPPillar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: rgba(238, 244, 252, 0.55);
+    border: 1px solid rgba(12, 45, 74, 0.06);
+    border-radius: 24px;
+    padding: 32px 15px 20px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.OPPillar:hover {
+    background: rgba(230, 240, 252, 0.72);
+    box-shadow: 0 8px 32px rgba(12, 45, 74, 0.08);
+}
+
+/* Orange-accented pillars (Safety, Memory) get a warm tint */
+.OPPillar:nth-child(1),
+.OPPillar:nth-child(3) {
+    background: rgba(1, 26, 50, 0.04);
+    border-color: rgba(1, 26, 50, 0.1);
+}
+
+.OPPillar:nth-child(1):hover,
+.OPPillar:nth-child(3):hover {
+    background: rgba(1, 26, 50, 0.06);
+    box-shadow: 0 8px 32px rgba(1, 26, 50, 0.08);
+}
+
+/* ─── Icon row: big circle + step badge ─── */
+.OPPillarTop {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Main icon circle */
+.OPPillarIcon {
+    position: relative;
+    z-index: 2;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border: 4px solid #ffffff;
+    box-shadow: 0 8px 24px rgba(12, 45, 74, 0.18);
+    transition: transform 0.3s ease;
+}
+
+.OPPillarIcon--orange {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
+    box-shadow: 0 8px 24px rgba(1, 26, 50, 0.28);
+}
+
+.OPPillarIcon--navy {
+    background: linear-gradient(135deg, #1a4d8c 0%, #0c2d4a 100%);
+    box-shadow: 0 8px 24px rgba(12, 45, 74, 0.36);
+}
+
+.OPPillar:hover .OPPillarIcon {
+    transform: translateY(-4px) scale(1.06);
+}
+
+/* Dashed ring around icon (decorative) */
+.OPPillarIcon::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 2px dashed rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+}
+
+.OPPillarIcon--navy::before {
+    border-color: rgba(26, 77, 140, 0.4);
+}
+
+/* Step badge */
+.OPPillarStep {
+    position: absolute;
+    right: calc(50% - 72px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    z-index: 3;
+    box-shadow: 0 4px 12px rgba(12, 45, 74, 0.2);
+}
+
+.OPPillarStep--orange {
+    background: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(1, 26, 50, 0.28);
+}
+
+.OPPillarStep--navy {
+    background: #0c2d4a;
+    box-shadow: 0 4px 12px rgba(12, 45, 74, 0.38);
+}
+
+/* ─── Brush stroke title ─── */
+.OPPillarTitle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 260px;
+    min-height: 60px;
+}
+
+/* The actual brush stroke PNG image */
+.OPPillarTitleBrush {
+    position: absolute;
+    inset: 0;
+    background-image: url('/Images/OrangeBackground.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+}
+
+/* Navy variant: tint the orange brush to dark navy using CSS filter */
+.OPPillarTitle--navy .OPPillarTitleBrush {
+    filter: hue-rotate(215deg) saturate(1.8) brightness(0.42);
+}
+
+/* Title text sits on top of brush */
+.OPPillarTitleText {
+    position: relative;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    font-style: italic;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+    line-height: 1;
+    padding: 0 8px;
+}
+
+/* ─── Subtitle ─── */
+.OPPillarSubtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13.5px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.OPPillarSubtitle--orange { color: var(--primary-light); }
+.OPPillarSubtitle--navy   { color: #1a4d8c; }
+
+/* ─── Description ─── */
+.OPPillarDesc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #4a6278;
+    line-height: 1.65;
+    /* text-align: center; */
+    margin: 0;
+    /* max-width: 300px; */
+}
+
+/* ─── Feature list ─── */
+.OPItemList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    border-top: 1px solid rgba(12, 45, 74, 0.08);
+    padding-top: 12px;
+}
+
+.OPItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.OPItemIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+}
+
+.OPItemIcon--navy {
+    background: rgba(12, 45, 74, 0.07);
+    color: #1a4d8c;
+}
+
+.OPItemIcon--orange {
+    background: rgba(1, 26, 50, 0.08);
+    color: var(--primary-light);
+}
+
+.OPItemText {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.OPItemLabel {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0c2d4a;
+    line-height: 1.3;
+}
+
+.OPItemDesc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11.5px;
+    font-weight: 400;
+    color: #6a7a8c;
+    line-height: 1.45;
+}
+
+/* ─── Bottom image (brush-edge look) ─── */
+.OPPillarImage {
+    width: 100%;
+    margin-top: 4px;
+    overflow: visible;
+}
+
+.OPBrushImage {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 22px rgba(12, 45, 74, 0.16));
+    transition: transform 0.45s ease, filter 0.35s ease;
+}
+
+.OPPillar:hover .OPBrushImage {
+    transform: scale(1.02);
+    filter: drop-shadow(0 14px 26px rgba(12, 45, 74, 0.2));
+}
+
+/* ════════════════════════
+   RESPONSIVE
+════════════════════════ */
+@media (max-width: 900px) {
+    .OPGrid {
+        grid-template-columns: 1fr;
+        max-width: 360px;
+        margin: 0 auto;
+        gap: 48px;
+    }
+
+    .OPConnectorLine {
+        display: none;
+    }
+
+    .OPPillarStep {
+        right: calc(50% - 52px);
+    }
+
+}
+
+@media (max-width: 560px) {
+    .OPSectionHeader {
+        margin-bottom: 48px;
+    }
+
+    .OPSubtitle {
+        font-size: 14px;
+    }
+
+    .OPPillarTitleText {
+        font-size: 22px;
+    }
+
+    .OPPillarIcon {
+        width: 62px;
+        height: 62px;
+    }
+}

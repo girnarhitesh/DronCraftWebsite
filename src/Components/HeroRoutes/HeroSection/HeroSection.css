@@ -1,0 +1,394 @@
+/* ═══════════════════════════════════════
+   HERO SECTION — reference layout
+═══════════════════════════════════════ */
+.HeroSection {
+    position: relative;
+    width: 100%;
+}
+
+.HeroMedia {
+    position: relative;
+    height: 88vh;
+    min-height: 540px;
+    max-height: 860px;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--primary-color);
+}
+
+.HeroMediaPoster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    z-index: 0;
+    filter: blur(16px);
+    transform: scale(1.06);
+    transition: opacity 0.7s ease, filter 0.7s ease;
+}
+
+.HeroMedia--loaded .HeroMediaPoster {
+    opacity: 0;
+    filter: blur(0);
+    pointer-events: none;
+}
+
+.HeroMediaVideo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    z-index: 1;
+    opacity: 0;
+    filter: blur(20px) saturate(1.08) contrast(1.05);
+    transition: opacity 0.7s ease, filter 0.9s ease;
+}
+
+.HeroMediaVideo--loaded {
+    opacity: 1;
+    filter: blur(0) saturate(1.08) contrast(1.05);
+}
+
+.HeroMediaOverlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+        linear-gradient(
+            to right,
+            rgba(0, 28, 53, 0.94) 0%,
+            rgba(0, 28, 53, 0.82) 28%,
+            rgba(0, 28, 53, 0.45) 52%,
+            rgba(0, 28, 53, 0.12) 72%,
+            transparent 100%
+        ),
+        linear-gradient(
+            to top,
+            rgba(0, 28, 53, 0.35) 0%,
+            transparent 40%
+        );
+    pointer-events: none;
+}
+
+.HeroContent {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    padding: 32px 0 100px;
+}
+
+.HeroShell {
+    max-width: 80%;
+}
+
+.HeroLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    max-width: 560px;
+}
+
+/* ─── Badge ─── */
+.HeroBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px 6px 10px;
+    border: 1.5px solid rgba(255, 255, 255, 0.45);
+    border-radius: 999px;
+    background: rgba(1, 26, 50, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.HeroBadgeIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-on-dark);
+}
+
+.HeroBadgeText {
+    color: var(--text-on-dark);
+    /* font-family: "Montserrat", sans-serif; */
+    font-weight: 700;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+/* ─── Headings ─── */
+.HeroHeadings {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.HeroHeadingWhite {
+    margin: 0;
+    color: #ffffff;
+    /* font-family: "Montserrat", sans-serif; */
+    font-size: clamp(38px, 5.5vw, 58px);
+    font-weight: 800;
+    /* font-style: italic; */
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+}
+
+.HeroHeadingOrangeBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 2px;
+}
+
+.HeroHeadingAccent {
+    display: block;
+    width: 52px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 2px;
+}
+
+.HeroHeadingOrange {
+    margin: 0;
+    color: var(--secondary-color);
+    /* font-family: "Montserrat", sans-serif; */
+    font-size: clamp(38px, 5.5vw, 58px);
+    font-weight: 800;
+    /* font-style: italic; */
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+}
+
+/* ─── Subtitle ─── */
+.HeroSubtitle {
+    margin: 0;
+    max-width: 460px;
+    color: rgba(255, 255, 255, 0.88);
+    font-family: "Inter", sans-serif;
+    font-size: clamp(13px, 1.2vw, 15px);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* ─── CTAs ─── */
+.HeroButtons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 2px;
+}
+
+/* ─── Trust tags ─── */
+.HeroTrustTags {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.HeroTrustTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.HeroTrustTagIcon {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+    .HeroContent {
+        padding-bottom: 110px;
+    }
+
+    .HeroLeft {
+        max-width: 100%;
+    }
+}
+
+/* Mobile — video full-bleed, copy above floating stats card */
+@media (max-width: 768px) {
+    .HeroSection {
+        position: relative;
+        min-height: clamp(520px, 84svh, 720px);
+        padding-bottom: 140px;
+        overflow: visible;
+    }
+
+    .HeroMedia {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        min-height: 100%;
+        max-height: none;
+    }
+
+    .HeroMediaVideo {
+        object-position: center 42%;
+    }
+
+    .HeroMediaOverlay {
+        background:
+            linear-gradient(
+                to top,
+                rgba(0, 28, 53, 0.95) 0%,
+                rgba(0, 28, 53, 0.65) 32%,
+                rgba(0, 28, 53, 0.25) 58%,
+                transparent 78%
+            ),
+            linear-gradient(
+                to right,
+                rgba(0, 28, 53, 0.7) 0%,
+                rgba(0, 28, 53, 0.3) 50%,
+                transparent 90%
+            );
+    }
+
+    .HeroContent {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: stretch;
+        padding-top: calc(56px + env(safe-area-inset-top, 0px));
+        padding-bottom: 128px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .HeroShell {
+        width: var(--layout-width);
+        max-width: var(--layout-max);
+        margin-left: auto;
+        margin-right: auto;
+        flex-shrink: 0;
+    }
+
+    .HeroLeft {
+        gap: 10px;
+        max-width: 100%;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .HeroBadge {
+        padding: 5px 10px 5px 8px;
+        gap: 6px;
+    }
+
+    .HeroBadgeText {
+        font-size: 9px;
+        letter-spacing: 0.12em;
+    }
+
+    .HeroHeadingWhite,
+    .HeroHeadingOrange {
+        font-size: clamp(28px, 8.2vw, 36px);
+        line-height: 1.08;
+    }
+
+    .HeroHeadingOrangeBlock {
+        gap: 6px;
+        margin-top: 0;
+    }
+
+    .HeroHeadingAccent {
+        width: 36px;
+        height: 3px;
+    }
+
+    .HeroSubtitle {
+        font-size: 12px;
+        line-height: 1.5;
+        max-width: 100%;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Keep hero compact — trust tags below fold on small screens */
+    .HeroTrustTags {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .HeroSection {
+        min-height: clamp(480px, 80svh, 640px);
+        padding-bottom: 110px;
+    }
+
+    .HeroContent {
+        padding-top: calc(52px + env(safe-area-inset-top, 0px));
+        padding-bottom: 118px;
+    }
+
+    .HeroLeft {
+        gap: 8px;
+    }
+
+    .HeroHeadingWhite,
+    .HeroHeadingOrange {
+        font-size: clamp(24px, 7.5vw, 30px);
+    }
+
+    .HeroSubtitle {
+        font-size: 11px;
+        -webkit-line-clamp: 2;
+    }
+
+    .HeroTrustTags {
+        margin-top: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .HeroMediaPoster,
+    .HeroMediaVideo {
+        display: none;
+        filter: none;
+    }
+
+    .HeroMedia::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("/Images/BackgroundImages/HeroBackgroundImage.png") center / cover no-repeat;
+    }
+}

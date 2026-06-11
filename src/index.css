@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --primary-color: #011A32;
+  --primary-mid: #0c2d4a;
+  --primary-light: #1a4d8c;
+  --secondary-color: #FF6B00;
+  --text-on-dark: #ffffff;
+  --text-muted: #6a7a8c;
+  --text-body: #5c6f82;
+  --border-light: #e8edf2;
+  --surface-soft: #f3f6f9;
+
+  /* Layout — shared across all page sections */
+  --layout-width: 80%;
+  --layout-max: 1320px;
+  --section-padding-y: 40px;
+  --section-padding-y-md: 30px;
+  --section-padding-y-sm: 48px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding-y-sm: 20px;
+    --layout-width: 95%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+}
+
+.MaxWidthContainer {
+  width: var(--layout-width);
+  max-width: var(--layout-max);
+}
+
+.MarginAuto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Shared vertical spacing for main page sections */
+.SectionPad {
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+}
+
+@media (max-width: 1024px) {
+  .SectionPad {
+    padding-top: var(--section-padding-y-md);
+    padding-bottom: var(--section-padding-y-md);
+  }
+}
+
+@media (max-width: 640px) {
+  .SectionPad {
+    padding-top: var(--section-padding-y-sm);
+    padding-bottom: var(--section-padding-y-sm);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  font-family: "Poppins", sans-serif;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 60px;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: normal;
+}
+
+h4 {
+  font-size: 35px;
+  font-weight: 900;
+  line-height: normal;
+}
+
+h5 {
+  font-size: 30px;
+  font-weight: 900;
+  line-height: normal;
+}
+
+h6 {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: normal;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+p {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Single-word / line accent — use sparingly */
+.u-accent {
+  color: var(--secondary-color);
+}

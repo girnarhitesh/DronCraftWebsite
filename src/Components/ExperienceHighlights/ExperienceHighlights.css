@@ -1,0 +1,221 @@
+.ExperienceHighlights {
+    background: #ffffff;
+}
+
+/* ─── Header ─── */
+.EHHeader {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.EHEyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.EHEyebrowLine {
+    width: 26px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--primary-light);
+}
+
+.EHEyebrowText {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--primary-light);
+}
+
+.EHTitle {
+    margin: 0 0 6px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 800;
+    color: var(--primary-mid);
+    letter-spacing: -0.02em;
+}
+
+.EHSubtitle {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: var(--text-body);
+}
+
+/* ─── 4-column grid ─── */
+.EHGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+/* ─── Card — sharp corners, no border-radius ─── */
+.EHCard {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    background: var(--primary-mid);
+    aspect-ratio: 3 / 4;
+    cursor: default;
+}
+
+.EHCardImage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.02);
+    transition: transform 0.55s ease, filter 0.55s ease;
+    filter: brightness(0.82) saturate(1.08);
+}
+
+.EHCardOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(1, 26, 50, 0.88) 0%,
+        rgba(1, 26, 50, 0.32) 46%,
+        rgba(1, 26, 50, 0.08) 100%
+    );
+    transition: opacity 0.35s ease;
+}
+
+/* ─── Corner bracket decorations ─── */
+.EHCorner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    z-index: 2;
+    pointer-events: none;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7;
+}
+
+.EHCorner--tl {
+    top: 10px;
+    left: 10px;
+    border-top: 2.5px solid #ffffff;
+    border-left: 2.5px solid #ffffff;
+}
+
+.EHCorner--tr {
+    top: 10px;
+    right: 10px;
+    border-top: 2.5px solid #ffffff;
+    border-right: 2.5px solid #ffffff;
+}
+
+.EHCorner--bl {
+    bottom: 10px;
+    left: 10px;
+    border-bottom: 2.5px solid #ffffff;
+    border-left: 2.5px solid #ffffff;
+}
+
+.EHCorner--br {
+    bottom: 10px;
+    right: 10px;
+    border-bottom: 2.5px solid #ffffff;
+    border-right: 2.5px solid #ffffff;
+}
+
+/* ─── Title ─── */
+.EHCardTitle {
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    bottom: 18px;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(13px, 1.3vw, 17px);
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+/* ─── Hover ─── */
+.EHCard:hover .EHCardImage {
+    transform: scale(1.07);
+    filter: brightness(0.72) saturate(1.12);
+}
+
+.EHCard:hover .EHCardOverlay {
+    opacity: 1.3;
+}
+
+.EHCard:hover .EHCorner {
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1200px) {
+    .EHGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 11px;
+    }
+}
+
+@media (max-width: 768px) {
+    .EHGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .EHCard {
+        aspect-ratio: 4 / 3;
+    }
+
+    .EHCardTitle {
+        font-size: 12px;
+        bottom: 14px;
+        left: 12px;
+        right: 12px;
+    }
+
+    .EHCorner {
+        width: 14px;
+        height: 14px;
+        top: 8px;
+        left: 8px;
+    }
+
+    .EHCorner--tr,
+    .EHCorner--br {
+        left: auto;
+        right: 8px;
+    }
+
+    .EHCorner--bl,
+    .EHCorner--br {
+        top: auto;
+        bottom: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .EHGrid {
+        gap: 8px;
+    }
+
+    .EHCard {
+        aspect-ratio: 3 / 2;
+    }
+
+    .EHCardTitle {
+        font-size: 11px;
+        bottom: 10px;
+    }
+}

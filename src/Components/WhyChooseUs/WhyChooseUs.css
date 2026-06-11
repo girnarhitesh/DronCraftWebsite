@@ -1,0 +1,150 @@
+/* ═══════════════════════════════════════
+   WHY CHOOSE US — compact comparison table
+═══════════════════════════════════════ */
+.WhyChooseUs {
+    background: #ffffff;
+}
+
+.WhyChooseUsHeader {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.WhyChooseUsTitle {
+    margin: 0 0 6px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(22px, 2.8vw, 30px);
+    font-weight: 800;
+    color: var(--primary-mid);
+    letter-spacing: -0.02em;
+}
+
+.WhyChooseUsTableWrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(1, 26, 50, 0.06);
+}
+
+.WhyChooseUsTable {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+.WhyChooseUsTable thead th {
+    padding: 8px 10px;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--primary-color);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    vertical-align: middle;
+}
+
+.WhyChooseUsTable thead th:nth-child(1) {
+    width: 11%;
+}
+
+.WhyChooseUsTable thead th:nth-child(2) {
+    width: 16%;
+}
+
+.WhyChooseUsTable thead th:nth-child(3),
+.WhyChooseUsTable thead th:nth-child(4) {
+    width: 36.5%;
+}
+
+.WhyChooseUsTable tbody th,
+.WhyChooseUsTable tbody td {
+    padding: 5px 8px;
+    border: 1px solid #e2e8ef;
+    vertical-align: top;
+    text-align: left;
+}
+
+.WCUCategory {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary-mid);
+    background: #f8fafc;
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.WCUKey {
+    font-family: "Montserrat", sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--primary-mid);
+    background: #fafbfc;
+    white-space: nowrap;
+}
+
+.WCUDrone,
+.WCUOthers {
+    background: #ffffff;
+    color: #3d4f63;
+}
+
+.WCUCell {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.WCUIcon {
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-size: 13px;
+}
+
+.WCUIcon--yes {
+    color: #22a06b;
+}
+
+.WCUIcon--no {
+    color: #dc3545;
+}
+
+.WhyChooseUsTable tbody tr:nth-child(even) .WCUDrone,
+.WhyChooseUsTable tbody tr:nth-child(even) .WCUOthers {
+    background: #fcfdfe;
+}
+
+@media (max-width: 900px) {
+    .WhyChooseUsTable {
+        font-size: 10px;
+        min-width: 680px;
+    }
+
+    .WhyChooseUsTable thead th,
+    .WCUKey {
+        font-size: 10px;
+    }
+
+    .WhyChooseUsTable tbody th,
+    .WhyChooseUsTable tbody td {
+        padding: 4px 6px;
+    }
+
+    .WCUIcon {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    .WhyChooseUsHeader {
+        margin-bottom: 14px;
+    }
+
+}

@@ -1,0 +1,48 @@
+.OfferBanner {
+    position: relative;
+    z-index: 1;
+    background: #ffffff;
+}
+
+.OfferBannerInner {
+    width: var(--layout-width);
+    max-width: var(--layout-max);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.OfferBannerImg {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 8px 28px rgba(1, 26, 50, 0.1);
+}
+
+@media (max-width: 768px) {
+    /* Align with hero stats overlap — same horizontal gutters as hero */
+    .OfferBanner:first-of-type {
+        padding-top: 110px;
+    }
+
+    .OfferBanner.SectionPad {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .OfferBannerInner {
+        width: var(--layout-width);
+        max-width: var(--layout-max);
+    }
+}
+
+@media (max-width: 640px) {
+    .OfferBannerImg {
+        border-radius: 10px;
+    }
+
+    .OfferBanner:first-of-type {
+        padding-top: 96px;
+    }
+}

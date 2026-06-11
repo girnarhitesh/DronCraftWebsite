@@ -1,0 +1,147 @@
+/* ─── Small drone fleet — decorative, does not shift header text ─── */
+.ChooseHeaderDroneWrap {
+    position: absolute;
+    inset: 0;
+    max-width: 720px;
+    margin: 0 auto;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 1;
+}
+
+.ChooseDroneUnit {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    opacity: 0.92;
+    transform:
+        translate(var(--drone-drift, 0px), 0)
+        rotate(var(--drone-rotate, -8deg));
+    animation: chooseDroneFloat 3.8s ease-in-out infinite;
+    animation-delay: var(--drone-delay, 0s);
+}
+
+.ChooseDroneUnit--tl {
+    left: 2%;
+    top: 4%;
+    --drone-rotate: -14deg;
+}
+
+.ChooseDroneUnit--tr {
+    right: 2%;
+    top: 0;
+    --drone-rotate: 12deg;
+}
+
+.ChooseDroneUnit--br {
+    right: 8%;
+    bottom: 8%;
+    width: 52px;
+    height: 52px;
+    opacity: 0.78;
+    --drone-rotate: -6deg;
+}
+
+@keyframes chooseDroneFloat {
+    0%,
+    100% {
+        margin-top: 0;
+    }
+    50% {
+        margin-top: -6px;
+    }
+}
+
+.ChooseDroneSvg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: drop-shadow(0 6px 10px rgba(12, 45, 74, 0.14));
+}
+
+.ChooseDroneSvgShadow {
+    animation: chooseDroneShadowPulse 3.8s ease-in-out infinite;
+    animation-delay: var(--drone-delay, 0s);
+}
+
+@keyframes chooseDroneShadowPulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.ChooseDroneSvgProp--tl {
+    transform-origin: 48px 48px;
+    animation: choosePropSpin 0.14s linear infinite;
+}
+
+.ChooseDroneSvgProp--tr {
+    transform-origin: 152px 48px;
+    animation: choosePropSpin 0.14s linear infinite reverse;
+}
+
+.ChooseDroneSvgProp--bl {
+    transform-origin: 48px 152px;
+    animation: choosePropSpin 0.14s linear infinite;
+}
+
+.ChooseDroneSvgProp--br {
+    transform-origin: 152px 152px;
+    animation: choosePropSpin 0.14s linear infinite reverse;
+}
+
+@keyframes choosePropSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.ChooseDroneSvgLedFront {
+    animation: chooseLedBlink 1.8s ease-in-out infinite;
+}
+
+@keyframes chooseLedBlink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.35;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ChooseDroneUnit {
+        animation: none;
+    }
+
+    .ChooseDroneSvgProp {
+        animation-duration: 0.5s;
+    }
+}
+
+@media (max-width: 900px) {
+    .ChooseHeaderDroneWrap {
+        max-width: 100%;
+    }
+
+    .ChooseDroneUnit {
+        width: 52px;
+        height: 52px;
+    }
+
+    .ChooseDroneUnit--br {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ChooseHeaderDroneWrap {
+        display: none;
+    }
+}
