@@ -40,10 +40,10 @@ const ScrollToTop = () => {
   return null
 }
 
-function App() {
+function App({ isPrerender = false }) {
   return (
     <>
-      <ScrollToTop />
+      {!isPrerender && <ScrollToTop />}
       <Routes>
         <Route
           path="/"

@@ -10,14 +10,23 @@ const iconSize = 22;
 const stats = [
     {
         icon: <HiOutlineUserCircle size={iconSize} />,
-        count: 5000,
+        count: 25000,
         suffix: "+",
         sub: "Happy Guests",
     },
     {
         icon: <HiOutlineShieldCheck size={iconSize} />,
         title: "WRA Certified",
-        sub: "River Guides",
+        sub: (
+            <a
+                href="https://bucketlistt.com/"
+                className="HeroStatLink"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                River Guides
+            </a>
+        ),
     },
     {
         icon: <TbKayak size={iconSize} />,

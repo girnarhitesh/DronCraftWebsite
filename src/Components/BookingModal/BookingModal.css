@@ -256,3 +256,181 @@
         max-width: 180px;
     }
 }
+
+/* ═══════════════════════════════════════
+   SEASON CLOSED — rain notice modal
+═══════════════════════════════════════ */
+
+.GlobalBookingModal--season.GlobalBookingModal .ant-modal-content,
+.GlobalBookingModal--season .ant-modal-content {
+    background: #0b2a45 !important;
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+.GBM-SeasonWrap {
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+    background: linear-gradient(165deg, #071e33 0%, #0d3354 42%, #13466d 100%);
+    color: #ffffff;
+}
+
+.GBM-Rain {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.GBM-RainDrop {
+    position: absolute;
+    top: -12%;
+    width: 2px;
+    border-radius: 999px;
+    background: linear-gradient(
+        to bottom,
+        rgba(210, 235, 255, 0),
+        rgba(190, 225, 255, 0.95)
+    );
+    box-shadow: 0 0 4px rgba(160, 210, 255, 0.35);
+    animation-name: GBM-rainFall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.GBM-RainMist {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(100, 170, 220, 0.28), transparent 55%),
+        linear-gradient(to bottom, transparent 50%, rgba(4, 16, 32, 0.55));
+}
+
+@keyframes GBM-rainFall {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        transform: translateY(120vh) translateX(12px);
+    }
+}
+
+.GBM-SeasonWrap .GBM-Header {
+    position: relative;
+    z-index: 1;
+    background: rgba(4, 18, 34, 0.65);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.GBM-SeasonBody {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    padding: 28px 28px 32px;
+}
+
+.GBM-SeasonIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    color: #e8f4ff;
+    margin-bottom: 4px;
+    box-shadow: 0 0 36px rgba(120, 190, 255, 0.35);
+}
+
+.GBM-SeasonHeadline {
+    margin: 0;
+    font-family: "Montserrat", "Poppins", sans-serif;
+    font-size: clamp(1.25rem, 3.5vw, 1.55rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    line-height: 1.25;
+    max-width: 22ch;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+}
+
+.GBM-SeasonLead {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.55;
+    color: #e6f2fc;
+    max-width: 38ch;
+}
+
+.GBM-SeasonCopy {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #c5dceb;
+    max-width: 40ch;
+}
+
+.GBM-SeasonBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    font-family: "Poppins", sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #f0f7ff;
+}
+
+.GBM-SeasonBadge svg {
+    flex-shrink: 0;
+    color: #9ed0f5;
+}
+
+.GBM-SeasonCta {
+    margin-top: 8px;
+    padding: 12px 36px;
+    border: 0;
+    border-radius: 10px;
+    background: #ff6b1a;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.GBM-SeasonCta:hover {
+    background: #ff7d33;
+}
+
+@media (max-width: 480px) {
+    .GBM-SeasonBody {
+        padding: 22px 18px 26px;
+        gap: 12px;
+    }
+
+    .GBM-SeasonIcon {
+        width: 72px;
+        height: 72px;
+    }
+
+    .GBM-SeasonIcon svg {
+        width: 40px;
+        height: 40px;
+    }
+}

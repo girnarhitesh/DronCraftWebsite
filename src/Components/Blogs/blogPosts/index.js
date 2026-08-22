@@ -2,8 +2,12 @@ import { aCompleteGuideFirstTimers } from "./aCompleteGuideFirstTimers";
 import { raftingCostGuide } from "./raftingCostGuide";
 import { whiteWaterRaftingDroneCraft } from "./whiteWaterRaftingDroneCraft";
 import { ultimateAdventure } from "./ultimateAdventure";
+import { droneRaftingVideoVsGopro } from "./droneRaftingVideoVsGopro";
+import { aerialRaftingVideosRishikesh } from "./aerialRaftingVideosRishikesh";
 
 const allPosts = [
+    droneRaftingVideoVsGopro,
+    aerialRaftingVideosRishikesh,
     aCompleteGuideFirstTimers,
     raftingCostGuide,
     whiteWaterRaftingDroneCraft,

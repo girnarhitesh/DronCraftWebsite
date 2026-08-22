@@ -16,6 +16,18 @@ export const blogsPageMeta = {
 
 export const blogs = [
     {
+        id: "drone-rafting-video-vs-gopro",
+        slug: "drone-rafting-video-vs-gopro-rishikesh",
+        title: "Why a Drone Rafting Video Beats Any GoPro Clip in Rishikesh",
+        image: "/Images/OurBlogImages/drone-rafting-video-vs-gopro-rishikesh.png",
+    },
+    {
+        id: "aerial-rafting-videos",
+        slug: "aerial-rafting-videos-in-rishikesh",
+        title: "Aerial Rafting Videos in Rishikesh: A New Way to Relive the Ganga",
+        image: "/Images/OurBlogImages/aerial-rafting-videos-in-rishikesh.png",
+    },
+    {
         id: "complete-guide-first-timers",
         slug: "a-complete-guide-to-rafting-in-rishikesh-for-first-timers",
         title: "A Complete Guide to Rafting in Rishikesh for First-Timers",
