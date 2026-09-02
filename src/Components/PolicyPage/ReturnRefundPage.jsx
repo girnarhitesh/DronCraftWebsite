@@ -68,7 +68,15 @@ const ReturnRefundPage = () => {
                         <p>
                             <strong>Cancellation Window:</strong> You may cancel your booking only at
                             least 24 hours prior to the scheduled activity start time. In that case,
-                            the booking amount is non-refundable; however, the Thrill Factory voucher
+                            the booking amount is non-refundable; however, the{" "}
+                            <a
+                                href="https://www.bucketlistt.com/bungee-jumping-in-rishikesh"
+                                className="PolicyKeywordLink"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Thrill Factory voucher
+                            </a>{" "}
                             may still be redeemed by the booked persons if they wish to do so.
                         </p>
                         <p>

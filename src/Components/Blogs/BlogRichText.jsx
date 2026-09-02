@@ -17,7 +17,7 @@ export function BlogRichText({ content, className, as: Tag = "span" }) {
                         <a
                             key={`${part.text}-${index}`}
                             href={part.href}
-                            className="BlogPostInlineLink"
+                            className={part.className || "BlogPostInlineLink"}
                             target="_blank"
                             rel="noopener noreferrer"
                         >

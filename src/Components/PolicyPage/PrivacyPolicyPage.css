@@ -72,6 +72,18 @@
     color: #445a6f;
 }
 
+.PolicyKeywordLink {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+}
+
+.PolicyKeywordLink:hover,
+.PolicyKeywordLink:focus-visible {
+    color: inherit;
+    text-decoration: none;
+}
+
 .PolicyContactList {
     margin: 8px 0 0;
     padding-left: 18px;

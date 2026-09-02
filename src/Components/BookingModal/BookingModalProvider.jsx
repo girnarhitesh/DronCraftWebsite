@@ -157,7 +157,15 @@ const BookingModalProvider = ({ children }) => {
                                     initial="hidden"
                                     animate="visible"
                                 >
-                                    Due to monsoon rains and high water levels on the Ganga, river rafting
+                                    Due to monsoon rains and high water levels on the Ganga,{" "}
+                                    <a
+                                        href="https://www.bucketlistt.com/river-rafting"
+                                        className="GBM-KeywordLink"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        river rafting
+                                    </a>{" "}
                                     in Rishikesh is temporarily stopped for safety.
                                 </motion.p>
 
