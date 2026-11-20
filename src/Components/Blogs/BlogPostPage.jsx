@@ -1,14 +1,11 @@
 import React, { useEffect } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { IoArrowBack } from "react-icons/io5";
-import { getBlogPost, getBlogUrlSlug } from "./blogPosts";
+import { getBlogPost } from "./blogPosts";
 import { BlogRichText } from "./BlogRichText";
 import BlogImage from "./BlogImage";
-import { applyPageMeta, resetPageMeta, toAbsoluteUrl } from "../../utils/pageMeta";
 import { preloadImages } from "../../utils/preloadImages";
 import "./BlogPostPage.css";
-
-const SITE_ORIGIN = "https://www.dronecraft.co.in";
 
 function getPlainText(content) {
     if (typeof content === "string") return content;
@@ -83,24 +80,8 @@ const BlogPostPage = () => {
     useEffect(() => {
         if (!post) return undefined;
 
-        const canonical = `${SITE_ORIGIN}/blogs/news/${getBlogUrlSlug(post)}`;
-        const ogImage = toAbsoluteUrl(post.image);
-
-        applyPageMeta({
-            title: post.metaTitle,
-            description: post.metaDescription,
-            keywords: post.metaKeywords,
-            canonical,
-            ogTitle: post.metaTitle,
-            ogDescription: post.metaDescription,
-            ogUrl: canonical,
-            ogType: "article",
-            ogImage,
-        });
-
         preloadImages([post.image]);
-
-        return resetPageMeta;
+        return undefined;
     }, [post]);
 
     if (!post) {

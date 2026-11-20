@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./PrivacyPolicyPage.css";
 
 const sections = [
@@ -143,18 +143,6 @@ const sections = [
 ];
 
 const TermsAndConditionPage = () => {
-    useEffect(() => {
-        document.title = "Terms And Condition | Drone Craft";
-
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute(
-                "content",
-                "Read Drone Craft Terms And Condition including eligibility, usage rules, cookies, links, liability, and dispute resolution."
-            );
-        }
-    }, []);
-
     return (
         <main className="PolicyPage SectionPad">
             <div className="PolicyPageInner MaxWidthContainer MarginAuto">

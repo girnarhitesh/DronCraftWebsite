@@ -1,19 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./PrivacyPolicyPage.css";
 
 const ReturnRefundPage = () => {
-    useEffect(() => {
-        document.title = "Return & Refund | Drone Craft";
-
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute(
-                "content",
-                "Read Drone Craft Return & Refund Policy including cancellation windows, refund timelines, and extraordinary circumstances."
-            );
-        }
-    }, []);
-
     return (
         <main className="PolicyPage SectionPad">
             <div className="PolicyPageInner MaxWidthContainer MarginAuto">

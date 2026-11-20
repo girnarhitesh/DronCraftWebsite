@@ -1,9 +1,9 @@
-import { aCompleteGuideFirstTimers } from "./aCompleteGuideFirstTimers";
-import { raftingCostGuide } from "./raftingCostGuide";
-import { whiteWaterRaftingDroneCraft } from "./whiteWaterRaftingDroneCraft";
-import { ultimateAdventure } from "./ultimateAdventure";
-import { droneRaftingVideoVsGopro } from "./droneRaftingVideoVsGopro";
-import { aerialRaftingVideosRishikesh } from "./aerialRaftingVideosRishikesh";
+import { aCompleteGuideFirstTimers } from "./aCompleteGuideFirstTimers.js";
+import { raftingCostGuide } from "./raftingCostGuide.js";
+import { whiteWaterRaftingDroneCraft } from "./whiteWaterRaftingDroneCraft.js";
+import { ultimateAdventure } from "./ultimateAdventure.js";
+import { droneRaftingVideoVsGopro } from "./droneRaftingVideoVsGopro.js";
+import { aerialRaftingVideosRishikesh } from "./aerialRaftingVideosRishikesh.js";
 
 const allPosts = [
     droneRaftingVideoVsGopro,

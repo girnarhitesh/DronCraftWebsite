@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./PrivacyPolicyPage.css";
 
 const sections = [
@@ -62,18 +62,6 @@ const sections = [
 ];
 
 const PrivacyPolicyPage = () => {
-    useEffect(() => {
-        document.title = "Privacy Policy | Drone Craft";
-
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute(
-                "content",
-                "Read Drone Craft's privacy policy covering personal information usage, cookies, data practices, and contact details."
-            );
-        }
-    }, []);
-
     return (
         <main className="PolicyPage SectionPad">
             <div className="PolicyPageInner MaxWidthContainer MarginAuto">

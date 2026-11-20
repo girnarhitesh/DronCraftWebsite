@@ -2,20 +2,9 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { build } from "vite";
-
-const PRERENDER_ROUTES = [
-    "/",
-    "/privacy-policy",
-    "/terms-and-condition",
-    "/return-refund",
-    "/blogs",
-    "/blogs/news/drone-rafting-video-vs-gopro-rishikesh",
-    "/blogs/news/aerial-rafting-videos-in-rishikesh",
-    "/blogs/news/a-complete-guide-to-rafting-in-rishikesh-for-first-timers",
-    "/blogs/news/how-much-does-rishikesh-rafting-cost-your-ultimate-guide-to-pricing",
-    "/blogs/news/White-Water-Rafting in-rishikesh",
-    "/blogs/news/why-rafting-in-rishikesh-is-the-ultimate-adventure",
-];
+import { applySeoToHtml } from "../src/seo/applySeoHtml.js";
+import { getPrerenderRoutes, getRouteSeo } from "../src/seo/routeSeo.js";
+import { writeSeoFiles } from "./write-seo-files.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
@@ -66,15 +55,16 @@ function routeToOutputPath(route) {
 }
 
 async function prerender() {
+    const { sitemap, feed } = await writeSeoFiles();
     await buildServerBundle();
 
     const template = await fs.readFile(templatePath, "utf-8");
     const serverEntry = path.join(serverDir, "entry-server.js");
     const { render } = await import(pathToFileURL(serverEntry).href);
 
-    for (const route of PRERENDER_ROUTES) {
+    for (const route of getPrerenderRoutes()) {
         const appHtml = render(route);
-        const html = injectAppHtml(template, appHtml);
+        const html = applySeoToHtml(injectAppHtml(template, appHtml), getRouteSeo(route));
         const outputPath = routeToOutputPath(route);
 
         await fs.mkdir(path.dirname(outputPath), { recursive: true });
@@ -82,6 +72,8 @@ async function prerender() {
         console.log(`Prerendered ${route} -> ${path.relative(root, outputPath)}`);
     }
 
+    await fs.writeFile(path.join(distDir, "sitemap.xml"), sitemap, "utf-8");
+    await fs.writeFile(path.join(distDir, "feed.xml"), feed, "utf-8");
     await fs.rm(serverDir, { recursive: true, force: true });
     console.log("Prerender complete.");
 }

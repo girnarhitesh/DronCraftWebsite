@@ -4,29 +4,13 @@ import { IoArrowForward } from "react-icons/io5";
 import "../Button/Button.css";
 import "./BlogsPage.css";
 import BlogImage from "./BlogImage";
-import { blogsHeader, blogs, blogsPageMeta, getBlogPath } from "./blogsData";
+import { blogsHeader, blogs, getBlogPath } from "./blogsData";
 import { hasBlogPost } from "./blogPosts";
-import { applyPageMeta, resetPageMeta } from "../../utils/pageMeta";
 import { preloadImages } from "../../utils/preloadImages";
-
-const SITE_ORIGIN = "https://www.dronecraft.co.in";
 
 const BlogsPage = () => {
     useEffect(() => {
-        applyPageMeta({
-            title: blogsPageMeta.metaTitle,
-            description: blogsPageMeta.metaDescription,
-            keywords: blogsPageMeta.metaKeywords,
-            canonical: `${SITE_ORIGIN}/blogs`,
-            ogTitle: blogsPageMeta.metaTitle,
-            ogDescription: blogsPageMeta.metaDescription,
-            ogUrl: `${SITE_ORIGIN}/blogs`,
-            ogType: "website",
-        });
-
         preloadImages(blogs.map((blog) => blog.image));
-
-        return resetPageMeta;
     }, []);
 
     return (

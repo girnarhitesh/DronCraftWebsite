@@ -1,4 +1,4 @@
-import { getBlogUrlSlug } from "./blogPosts";
+import { getBlogUrlSlug } from "./blogPosts/index.js";
 
 export const blogsHeader = {
     eyebrow: "Insights",

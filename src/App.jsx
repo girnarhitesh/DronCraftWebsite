@@ -18,6 +18,7 @@ import TermsAndConditionPage from "./Components/PolicyPage/TermsAndConditionPage
 import ReturnRefundPage from "./Components/PolicyPage/ReturnRefundPage"
 import BlogsPage from "./Components/Blogs/BlogsPage"
 import BlogPostPage from "./Components/Blogs/BlogPostPage"
+import { applyRouteSeo } from "./utils/pageMeta"
 
 const GA_MEASUREMENT_ID = "G-HZHRQYHD05"
 
@@ -35,6 +36,7 @@ const ScrollToTop = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" })
     trackPageView(pathname)
+    applyRouteSeo(pathname)
   }, [pathname])
 
   return null
