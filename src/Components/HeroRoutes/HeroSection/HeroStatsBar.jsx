@@ -17,16 +17,7 @@ const stats = [
     {
         icon: <HiOutlineShieldCheck size={iconSize} />,
         title: "WRA Certified",
-        sub: (
-            <a
-                href="https://bucketlistt.com/"
-                className="HeroStatLink"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                River Guides
-            </a>
-        ),
+        sub: "River Guides",
     },
     {
         icon: <TbKayak size={iconSize} />,

@@ -187,19 +187,6 @@
     color: var(--primary-mid);
 }
 
-/* Keyword outbound links — same look as surrounding text, no underline */
-.BlogPostKeywordLink {
-    color: inherit;
-    font-weight: inherit;
-    text-decoration: none;
-}
-
-.BlogPostKeywordLink:hover,
-.BlogPostKeywordLink:focus-visible {
-    color: inherit;
-    text-decoration: none;
-}
-
 @media (max-width: 768px) {
     .BlogPostPage {
         padding-top: 100px;

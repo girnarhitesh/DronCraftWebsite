@@ -18,19 +18,7 @@ export const raftingCostGuide = {
         {
             heading: "Rishikesh Rafting Packages from DroneCraft",
             paragraphs: [
-                [
-                    {
-                        text: "All costs are per person and include GST. Every Rishikesh rafting package also includes a ₹500 ",
-                    },
-                    {
-                        text: "Thrill Factory voucher",
-                        href: "https://www.bucketlistt.com/bungee-jumping-in-rishikesh",
-                        className: "BlogPostKeywordLink",
-                    },
-                    {
-                        text: ", which allows participating in any other adventure sport.",
-                    },
-                ],
+                "All costs are per person and include GST. Every Rishikesh rafting package also includes a ₹500 Thrill Factory voucher, which allows participating in any other adventure sport.",
             ],
         },
         {
@@ -41,19 +29,7 @@ export const raftingCostGuide = {
                 "Departure time: 9:00 AM to 4:00 PM, every hour",
             ],
             paragraphsAfter: [
-                [
-                    {
-                        text: "The 12 km rafting route is suitable for those who try rafting for the first time. Therefore, if you are new to ",
-                    },
-                    {
-                        text: "river rafting",
-                        href: "https://www.bucketlistt.com/river-rafting",
-                        className: "BlogPostKeywordLink",
-                    },
-                    {
-                        text: " or accompany someone who finds the idea slightly intimidating, 12 km is a perfect choice.",
-                    },
-                ],
+                "The 12 km rafting route is suitable for those who try rafting for the first time. Therefore, if you are new to river rafting or accompany someone who finds the idea slightly intimidating, 12 km is a perfect choice.",
                 "The route features less challenging rapids than the longer routes but remains an exciting experience. You will get splashed, paddle through the Ganges, and fully immerse yourself in rafting without spending hours on the river.",
                 "This rafting package will suit people with limited time.",
                 "Best choice for: First-timers, families, and beginners.",
@@ -145,17 +121,7 @@ export const raftingCostGuide = {
                 ],
             },
             paragraphsAfter: [
-                [
-                    {
-                        text: "All rafting packages include safety equipment, guides, rescue kayaks, drone surveillance, safety brief, transport service, guest facilities, and ₹500 ",
-                    },
-                    {
-                        text: "Thrill Factory voucher",
-                        href: "https://www.bucketlistt.com/bungee-jumping-in-rishikesh",
-                        className: "BlogPostKeywordLink",
-                    },
-                    { text: "." },
-                ],
+                "All rafting packages include safety equipment, guides, rescue kayaks, drone surveillance, safety brief, transport service, guest facilities, and ₹500 Thrill Factory voucher.",
             ],
         },
         {
@@ -172,17 +138,7 @@ export const raftingCostGuide = {
             heading: "Conclusion",
             paragraphs: [
                 "As you see, Rishikesh rafting prices are diverse. Nevertheless, DroneCraft's rafting tours range between ₹1,290 and ₹2,490 per person.",
-                [
-                    {
-                        text: "The price includes certified safety equipment, experienced guides, drone surveillance, guest facilities, transport service, and a ₹500 ",
-                    },
-                    {
-                        text: "Thrill Factory voucher",
-                        href: "https://www.bucketlistt.com/bungee-jumping-in-rishikesh",
-                        className: "BlogPostKeywordLink",
-                    },
-                    { text: "." },
-                ],
+                "The price includes certified safety equipment, experienced guides, drone surveillance, guest facilities, transport service, and a ₹500 Thrill Factory voucher.",
                 "Among the options offered by DroneCraft, the best choice for most people is the 16 km Shivpuri to Neem Beach rafting at ₹1,590.",
                 [
                     { text: "Visit " },
