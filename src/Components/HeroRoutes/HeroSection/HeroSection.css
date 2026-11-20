@@ -121,7 +121,7 @@
     color: var(--text-on-dark);
     /* font-family: "Montserrat", sans-serif; */
     font-weight: 700;
-    font-size: 10.5px;
+    font-size: 14px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     line-height: 1;
@@ -179,7 +179,7 @@
     max-width: 460px;
     color: rgba(255, 255, 255, 0.88);
     font-family: "Inter", sans-serif;
-    font-size: clamp(13px, 1.2vw, 15px);
+    font-size: clamp(16px, 1.2vw, 17px);
     font-weight: 400;
     line-height: 1.6;
 }
@@ -215,7 +215,7 @@
     -webkit-backdrop-filter: blur(10px);
     color: #ffffff;
     font-family: "Inter", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 1;
     white-space: nowrap;
@@ -312,7 +312,7 @@
     }
 
     .HeroBadgeText {
-        font-size: 9px;
+        font-size: 13px;
         letter-spacing: 0.12em;
     }
 
@@ -333,7 +333,7 @@
     }
 
     .HeroSubtitle {
-        font-size: 12px;
+        font-size: 16px;
         line-height: 1.5;
         max-width: 100%;
         display: -webkit-box;
@@ -369,7 +369,7 @@
     }
 
     .HeroSubtitle {
-        font-size: 11px;
+        font-size: 15px;
         -webkit-line-clamp: 2;
     }
 

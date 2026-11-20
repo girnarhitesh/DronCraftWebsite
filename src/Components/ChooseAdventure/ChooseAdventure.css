@@ -62,7 +62,7 @@
 
 .ChooseEyebrowIcon {
     color: var(--primary-light);
-    font-size: 14px;
+    font-size: 17px;
     flex-shrink: 0;
 }
 
@@ -70,7 +70,7 @@
     color: var(--primary-light);
     font-family: var(--font-label, "Poppins", sans-serif);
     font-weight: 700;
-    font-size: 11px;
+    font-size: 15px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
 }
@@ -105,7 +105,7 @@
     margin: 0 auto 18px;
     color: #5c6f82;
     font-family: var(--font-body, "Inter", sans-serif);
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.5;
 }
 
@@ -150,7 +150,7 @@
 
 .ChooseFeatureText strong {
     font-family: var(--font-section-poppins, "Poppins", sans-serif);
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--primary-mid);
     line-height: 1.15;
@@ -158,7 +158,7 @@
 
 .ChooseFeatureText span {
     font-family: var(--font-body, "Inter", sans-serif);
-    font-size: 10px;
+    font-size: 14px;
     color: #6a7a8c;
     line-height: 1.25;
 }
@@ -175,71 +175,61 @@
 
 .ChooseCard {
     background: #ffffff;
-    border: 1px solid #e8edf2;
-    border-radius: 14px;
+    border: 1px solid #e4ebf3;
+    border-top-width: 3px;
+    border-radius: 16px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 18px rgba(12, 45, 74, 0.07);
+    box-shadow: 0 6px 20px rgba(12, 45, 74, 0.06);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ChooseCard--calm {
+    border-top-color: #1aa88a;
+}
+
+.ChooseCard--popular {
+    border-top-color: var(--secondary-color);
+}
+
+.ChooseCard--wild {
+    border-top-color: var(--primary-color);
 }
 
 .ChooseCard:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 26px rgba(12, 45, 74, 0.1);
+    box-shadow: 0 12px 28px rgba(12, 45, 74, 0.1);
 }
 
 .ChooseCard--highlight {
-    border: 1.5px solid var(--primary-light);
-    box-shadow: 0 8px 24px rgba(1, 26, 50, 0.14);
+    box-shadow: 0 10px 26px rgba(255, 107, 0, 0.14);
 }
 
-/* ─── Image area — cinematic grade ─── */
+/* ─── Compact photo ─── */
 .ChooseCardImageWrap {
     position: relative;
-    aspect-ratio: 16 / 9;
+    height: 118px;
     overflow: hidden;
     background: var(--primary-color);
     isolation: isolate;
 }
 
-/* Color grade + vignette */
 .ChooseCardImageWrap::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: 1;
     pointer-events: none;
-    background:
-        radial-gradient(
-            ellipse 120% 90% at 50% 100%,
-            rgba(0, 28, 53, 0.55) 0%,
-            transparent 55%
-        ),
-        radial-gradient(
-            ellipse 80% 60% at 0% 0%,
-            rgba(26, 77, 140, 0.18) 0%,
-            transparent 50%
-        ),
-        linear-gradient(
-            180deg,
-            rgba(0, 20, 40, 0.42) 0%,
-            transparent 32%,
-            transparent 48%,
-            rgba(0, 28, 53, 0.65) 100%
-        ),
-        linear-gradient(
-            125deg,
-            rgba(26, 77, 140, 0.22) 0%,
-            transparent 45%,
-            rgba(1, 26, 50, 0.15) 100%
-        );
-    mix-blend-mode: multiply;
-    opacity: 0.92;
-    transition: opacity 0.45s ease;
+    background: linear-gradient(
+        180deg,
+        rgba(1, 26, 50, 0.28) 0%,
+        transparent 42%,
+        transparent 70%,
+        rgba(1, 26, 50, 0.12) 100%
+    );
 }
 
-/* Light sweep on hover */
 .ChooseCardImageWrap::after {
     content: "";
     position: absolute;
@@ -250,7 +240,7 @@
         105deg,
         transparent 38%,
         rgba(255, 255, 255, 0.04) 44%,
-        rgba(255, 255, 255, 0.32) 50%,
+        rgba(255, 255, 255, 0.28) 50%,
         rgba(255, 255, 255, 0.04) 56%,
         transparent 62%
     );
@@ -273,10 +263,6 @@
     }
 }
 
-.ChooseCard:hover .ChooseCardImageWrap::before {
-    opacity: 1;
-}
-
 .ChooseCard:hover .ChooseCardImageWrap::after {
     animation-duration: 2.2s;
 }
@@ -285,17 +271,29 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 42%;
     display: block;
-    filter: saturate(1.14) contrast(1.1) brightness(0.9);
-    transition: transform 0.55s ease, filter 0.45s ease;
+    filter: saturate(1.08) contrast(1.05);
+    transition: transform 0.55s ease;
 }
 
 .ChooseCard:hover .ChooseCardImage {
     transform: scale(1.05);
-    filter: saturate(1.2) contrast(1.12) brightness(0.96);
 }
 
-.ChooseCardDifficulty {
+.ChooseCardWave {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    z-index: 3;
+    width: 100%;
+    height: 16px;
+    display: block;
+    pointer-events: none;
+}
+
+.ChooseCardFlag {
     position: absolute;
     top: 8px;
     left: 8px;
@@ -304,82 +302,36 @@
     align-items: center;
     gap: 4px;
     padding: 4px 9px;
-    background: rgba(12, 45, 74, 0.9);
     color: #ffffff;
     font-family: var(--font-label, "Poppins", sans-serif);
-    font-size: 10px;
-    font-weight: 600;
-    border-radius: 999px;
-}
-
-.ChooseCardDuration {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    z-index: 4;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 4px 9px;
-    background: rgba(255, 255, 255, 0.96);
-    color: var(--primary-mid);
-    font-family: var(--font-label, "Poppins", sans-serif);
-    font-size: 10px;
-    font-weight: 600;
-    border-radius: 999px;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
-}
-
-.ChooseCardPopular {
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 4px 10px;
-    background: var(--primary-color);
-    color: #ffffff;
-    font-family: var(--font-label, "Poppins", sans-serif);
-    font-size: 9.5px;
+    font-size: 14px;
     font-weight: 700;
+    letter-spacing: 0.01em;
     border-radius: 999px;
-    box-shadow: 0 2px 8px rgba(1, 26, 50, 0.35);
+    line-height: 1.1;
     white-space: nowrap;
 }
 
-.ChooseCardPopular svg {
+.ChooseCardFlag--calm {
+    background: #148f78;
+}
+
+.ChooseCardFlag--popular {
+    background: var(--secondary-color);
+    box-shadow: 0 2px 8px rgba(255, 107, 0, 0.35);
+}
+
+.ChooseCardFlag--wild {
+    background: rgba(1, 26, 50, 0.92);
+}
+
+.ChooseCardFlag svg {
     color: #ffffff;
-}
-
-.ChooseCardRibbon {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 4;
-    padding: 5px 12px 5px 10px;
-    font-family: var(--font-label, "Poppins", sans-serif);
-    font-size: 9.5px;
-    font-weight: 700;
-    color: #ffffff;
-    border-radius: 0 8px 0 0;
-    line-height: 1.15;
-    max-width: 72%;
-}
-
-.ChooseCardRibbon--orange {
-    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
-}
-
-.ChooseCardRibbon--teal {
-    background: linear-gradient(135deg, #2db89a 0%, #1a9b82 100%);
 }
 
 .ChooseCardRating {
     position: absolute;
-    bottom: 8px;
+    top: 8px;
     right: 8px;
     z-index: 4;
     display: inline-flex;
@@ -389,134 +341,259 @@
     background: rgba(255, 255, 255, 0.96);
     color: var(--primary-mid);
     font-family: var(--font-label, "Poppins", sans-serif);
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 700;
     border-radius: 999px;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
 }
 
 .ChooseCardRating svg {
-    color: var(--primary-light);
-}
-
-.ChooseCardImageWrap:has(.ChooseCardRibbon) .ChooseCardRating {
-    bottom: 30px;
+    color: var(--secondary-color);
 }
 
 /* ─── Card body ─── */
 .ChooseCardBody {
-    padding: 12px 12px 14px;
+    padding: 0 12px 12px;
     display: flex;
     flex-direction: column;
+    gap: 8px;
     flex: 1;
-    gap: 0;
     min-height: 0;
 }
 
 .ChooseCardTitle {
-    margin: 0 0 3px;
+    margin: 0;
     font-family: var(--font-section-poppins, "Poppins", sans-serif);
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 700;
+    color: var(--primary-mid);
+    line-height: 1.2;
+}
+
+.ChooseCardTitleKm {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.ChooseCard--calm .ChooseCardTitleKm {
+    color: #0e7f6b;
+}
+
+.ChooseCard--popular .ChooseCardTitleKm {
+    color: var(--secondary-color);
+}
+
+.ChooseCard--wild .ChooseCardTitleKm {
+    color: var(--primary-color);
+}
+
+.ChooseCardTitlePlace {
+    display: block;
+    margin-top: 1px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #6a7a8c;
+    letter-spacing: 0;
+}
+
+.ChooseCardDesc {
+    margin: 0;
+    color: #5c6f82;
+    font-family: var(--font-body, "Inter", sans-serif);
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+/* Distance, duration, rapids — river-route strip */
+.ChooseCardFacts {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2px;
+    margin: 0;
+    padding: 8px 2px 7px;
+    list-style: none;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #f7fafc 0%, #eef3f8 100%);
+    border: 1px solid #e3ebf3;
+}
+
+.ChooseCardFacts::before {
+    content: "";
+    position: absolute;
+    left: 14%;
+    right: 14%;
+    top: 18px;
+    border-top: 1.5px dashed #c9d7e4;
+    z-index: 0;
+}
+
+.ChooseCardFact {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-align: center;
+    min-width: 0;
+    padding: 0 2px;
+}
+
+.ChooseCardFactIcon {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ffffff;
+    color: var(--primary-light);
+    border: 1px solid #d5e2ee;
+}
+
+.ChooseCard--calm .ChooseCardFactIcon {
+    color: #148f78;
+    border-color: #c7ebe3;
+}
+
+.ChooseCard--popular .ChooseCardFactIcon {
+    color: #e85d00;
+    border-color: #ffd7b8;
+}
+
+.ChooseCard--wild .ChooseCardFactIcon {
+    color: var(--primary-mid);
+}
+
+.ChooseCardFact strong {
+    font-family: var(--font-section-poppins, "Poppins", sans-serif);
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--primary-mid);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
+.ChooseCardFact small {
+    font-family: var(--font-body, "Inter", sans-serif);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #7b8b9c;
+    line-height: 1.1;
+}
+
+/* Named rapids */
+.ChooseRapids {
+    min-width: 0;
+}
+
+.ChooseRapidsLabel {
+    margin: 0;
+    font-family: var(--font-label, "Poppins", sans-serif);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7b8b9c;
+}
+
+.ChooseRapidsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    list-style: none;
+    margin: 5px 0 0;
+    padding: 0;
+}
+
+.ChooseRapid {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    max-width: 100%;
+    padding: 3px 7px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid #e1e8f0;
+    font-family: var(--font-label, "Poppins", sans-serif);
+    font-size: 14px;
+    font-weight: 600;
     color: var(--primary-mid);
     line-height: 1.25;
 }
 
-.ChooseCardLocation {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    margin: 0 0 6px;
-    color: #6a7a8c;
-    font-family: var(--font-body, "Inter", sans-serif);
-    font-size: 10.5px;
-    line-height: 1.2;
-}
-
-.ChooseCardLocation svg {
-    color: var(--primary-light);
+.ChooseRapidGrade,
+.ChooseRapidTag {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.35;
+    border-radius: 999px;
+    padding: 0 4px;
     flex-shrink: 0;
 }
 
-.ChooseCardDesc {
-    margin: 0 0 10px;
+.ChooseRapidGrade {
+    color: #e85d00;
+    background: rgba(255, 107, 0, 0.12);
+}
+
+.ChooseRapidTag {
+    color: #0e7f6b;
+    background: rgba(20, 143, 120, 0.12);
+}
+
+.ChooseRapidsNote {
+    margin: 5px 0 0;
     color: #5c6f82;
     font-family: var(--font-body, "Inter", sans-serif);
-    font-size: 11px;
-    line-height: 1.45;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.35;
 }
 
-/* Stats — compact timeline row */
-.ChooseCardStats {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 4px;
-    padding: 8px 6px;
-    margin-bottom: 10px;
-    background: #f3f6f9;
-    border-radius: 10px;
-    border: 1px solid #e8edf2;
+.ChooseCardBest {
+    margin: 0;
+    padding: 7px 8px;
+    border-radius: 8px;
+    background: #f6f8fb;
+    border-left: 2px solid var(--primary-light);
 }
 
-.ChooseCardStats::before {
-    content: "";
-    position: absolute;
-    left: 12%;
-    right: 12%;
-    top: 15px;
-    height: 1px;
-    background: #d5dde6;
-    z-index: 0;
+.ChooseCard--calm .ChooseCardBest {
+    background: #f3fbf8;
+    border-left-color: #1aa88a;
 }
 
-.ChooseCardStat {
-    position: relative;
-    z-index: 1;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    text-align: center;
-    padding: 0 2px;
-    min-width: 0;
+.ChooseCard--popular .ChooseCardBest {
+    background: #fff8f3;
+    border-left-color: var(--secondary-color);
 }
 
-.ChooseCardStatIcon {
-    color: var(--primary-light);
-    flex-shrink: 0;
-    background: #f3f6f9;
-    padding: 0 2px;
+.ChooseCard--wild .ChooseCardBest {
+    background: #f4f7fb;
+    border-left-color: var(--primary-color);
 }
 
-.ChooseCardStat span {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-    min-width: 0;
-}
-
-.ChooseCardStat strong {
-    font-family: var(--font-section-poppins, "Poppins", sans-serif);
-    font-size: 9.5px;
+.ChooseCardBestLabel {
+    display: block;
+    margin-bottom: 1px;
+    font-family: var(--font-label, "Poppins", sans-serif);
+    font-size: 13px;
     font-weight: 700;
-    color: var(--primary-mid);
-    line-height: 1.15;
-    white-space: nowrap;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--secondary-color);
 }
 
-.ChooseCardStat small {
+.ChooseCardBestText {
+    display: block;
     font-family: var(--font-body, "Inter", sans-serif);
-    font-size: 8.5px;
-    font-weight: 500;
-    color: #6a7a8c;
-    line-height: 1.1;
+    font-size: 15px;
+    line-height: 1.35;
+    color: #3e5266;
 }
 
 /* Footer: price + button */
@@ -539,7 +616,7 @@
 
 .ChooseCardPrice {
     font-family: var(--font-section-poppins, "Poppins", sans-serif);
-    font-size: 17px;
+    font-size: 22px;
     font-weight: 800;
     color: var(--primary-mid);
     line-height: 1;
@@ -548,7 +625,7 @@
 
 .ChooseCardVoucher {
     font-family: var(--font-body, "Inter", sans-serif);
-    font-size: 9.5px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--primary-light);
     line-height: 1.15;
@@ -563,7 +640,7 @@
     min-height: 32px;
     padding: 4px 4px 4px 10px;
     border-radius: 8px;
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 600;
     gap: 6px;
     letter-spacing: 0;
@@ -622,7 +699,7 @@
 
 .ChooseInclusionText strong {
     font-family: var(--font-section-poppins, "Poppins", sans-serif);
-    font-size: 11.5px;
+    font-size: 15px;
     font-weight: 700;
     color: var(--primary-mid);
     line-height: 1.15;
@@ -630,7 +707,7 @@
 
 .ChooseInclusionText span {
     font-family: var(--font-body, "Inter", sans-serif);
-    font-size: 9.5px;
+    font-size: 13px;
     color: #6a7a8c;
     line-height: 1.2;
 }
@@ -638,6 +715,12 @@
 /* ════════════════════════════════
    RESPONSIVE
 ════════════════════════════════ */
+@media (min-width: 1025px) {
+    .ChooseCardDesc {
+        min-height: calc(1.45em * 4);
+    }
+}
+
 @media (max-width: 1100px) {
     .ChooseGrid {
         gap: 14px;
@@ -670,12 +753,16 @@
         margin: 0 auto;
     }
 
+    .ChooseCardImageWrap {
+        height: 148px;
+    }
+
     .ChooseCardFooter {
         flex-direction: column;
         align-items: stretch;
     }
 
-    .ChooseCardViewBtn {
+    .ChooseCardViewBtn.Btn--outlineOrange {
         max-width: 100%;
         width: 100%;
     }
@@ -688,12 +775,12 @@
         padding: 0 8px;
     }
 
-    .ChooseCardStat strong {
+    .ChooseCardFact strong {
         white-space: normal;
-        font-size: 9px;
+        font-size: 15px;
     }
 
-    .ChooseCardStats::before {
+    .ChooseCardFacts::before {
         display: none;
     }
 

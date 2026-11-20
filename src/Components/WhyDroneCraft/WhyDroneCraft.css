@@ -48,7 +48,7 @@
 .WhyEyebrowText {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
-    font-size: 11px;
+    font-size: 15px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--primary-light);
@@ -93,7 +93,7 @@
 .WhyParagraph {
     margin: 0;
     font-family: "Inter", sans-serif;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 400;
     color: var(--text-body);
     line-height: 1.65;
@@ -188,7 +188,7 @@
 .WhyCardTitle {
     margin: 0 0 8px;
     font-family: "Montserrat", sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
     color: var(--primary-mid);
     line-height: 1.25;
@@ -197,7 +197,7 @@
 .WhyCardDesc {
     margin: 0;
     font-family: "Inter", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 400;
     color: var(--text-muted);
     line-height: 1.55;

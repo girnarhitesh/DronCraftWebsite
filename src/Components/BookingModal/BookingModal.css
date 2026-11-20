@@ -68,7 +68,7 @@
 
 .GBM-HeaderEyebrow {
     font-family: 'Poppins', sans-serif;
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -78,7 +78,7 @@
 
 .GBM-HeaderTitle {
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
     color: #ffffff;
     line-height: 1.25;
@@ -131,7 +131,7 @@
     align-items: center;
     gap: 5px;
     font-family: 'Poppins', sans-serif;
-    font-size: 11.5px;
+    font-size: 15px;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.92);
 }
@@ -188,7 +188,7 @@
 
 .GBM-LoaderText {
     font-family: 'Poppins', sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 500;
     color: #4a6278;
 }
@@ -229,7 +229,7 @@
     }
 
     .GBM-HeaderTitle {
-        font-size: 13px;
+        font-size: 16px;
         max-width: 240px;
     }
 
@@ -238,7 +238,7 @@
     }
 
     .GBM-TrustItem {
-        font-size: 10.5px;
+        font-size: 14px;
     }
 
     .GBM-IframeWrap {
@@ -363,7 +363,7 @@
 .GBM-SeasonLead {
     margin: 0;
     font-family: "Poppins", sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 500;
     line-height: 1.55;
     color: #e6f2fc;
@@ -385,7 +385,7 @@
 .GBM-SeasonCopy {
     margin: 0;
     font-family: "Poppins", sans-serif;
-    font-size: 13.5px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.6;
     color: #c5dceb;
@@ -402,7 +402,7 @@
     background: rgba(255, 255, 255, 0.14);
     border: 1px solid rgba(255, 255, 255, 0.28);
     font-family: "Poppins", sans-serif;
-    font-size: 12.5px;
+    font-size: 16px;
     font-weight: 600;
     color: #f0f7ff;
 }
@@ -420,7 +420,7 @@
     background: #ff6b1a;
     color: #ffffff;
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 700;
     cursor: pointer;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);

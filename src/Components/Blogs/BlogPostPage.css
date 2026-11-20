@@ -15,7 +15,7 @@
     gap: 8px;
     margin-bottom: 24px;
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 500;
     color: var(--primary-light);
     text-decoration: none;
@@ -40,7 +40,7 @@
 
 .BlogPostEyebrow {
     font-family: "Poppins", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -97,7 +97,7 @@
 
 .BlogPostParagraph {
     color: var(--text-body);
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.75;
 }
 
@@ -109,7 +109,7 @@
     margin: 14px 0 0;
     padding-left: 22px;
     color: var(--text-body);
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.75;
 }
 
@@ -136,7 +136,7 @@
     width: 100%;
     border-collapse: collapse;
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.5;
 }
 
@@ -163,7 +163,7 @@
     display: inline-block;
     margin-top: 16px;
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 600;
     color: var(--primary-light);
     text-decoration: none;

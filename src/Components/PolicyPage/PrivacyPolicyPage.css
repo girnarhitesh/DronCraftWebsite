@@ -15,7 +15,7 @@
 
 .PolicyEyebrow {
     font-family: "Montserrat", sans-serif !important;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -33,14 +33,14 @@
 
 .PolicyIntro {
     color: var(--text-body);
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.7;
     max-width: 820px;
 }
 
 .PolicyUpdated {
     margin-top: 8px;
-    font-size: 12px;
+    font-size: 16px;
     color: var(--text-muted);
 }
 
@@ -67,7 +67,7 @@
 
 .PolicySection p {
     margin: 0 0 10px;
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.75;
     color: #445a6f;
 }
@@ -90,7 +90,7 @@
 }
 
 .PolicyContactList li {
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.75;
     color: #445a6f;
 }
@@ -110,7 +110,7 @@
 
     .PolicySection p,
     .PolicyContactList li {
-        font-size: 13px;
+        font-size: 16px;
         line-height: 1.65;
     }
 }

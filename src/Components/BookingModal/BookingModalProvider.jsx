@@ -14,7 +14,7 @@ export const BookingModalProvider = ({ children }) => {
 
     const openBookingModal = useCallback((activityTitle = "") => {
         setTitle(activityTitle);
-        setIframeLoaded(false);
+        setIframeLoaded(false); 
         setIsOpen(true);
     }, []);
 
@@ -41,7 +41,7 @@ export const BookingModalProvider = ({ children }) => {
                 width={1000}
                 className="GlobalBookingModal"
                 closeIcon={<IoCloseOutline size={20} />}
-                title={null}
+                title={null}    
                 destroyOnClose
                 maskClosable={false}
             >

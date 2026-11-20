@@ -53,7 +53,7 @@
 
 .FooterBrandDesc {
     font-family: "Inter", sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.65;
     color: var(--primary-mid);
     margin-bottom: 22px;
@@ -93,14 +93,14 @@
 
 .FooterFeatureText strong {
     font-family: "Montserrat", sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--primary-mid);
 }
 
 .FooterFeatureText span {
     font-family: "Inter", sans-serif;
-    font-size: 11px;
+    font-size: 15px;
     line-height: 1.4;
     color: var(--text-muted);
 }
@@ -109,7 +109,7 @@
 .FooterColHeading {
     margin: 0 0 18px;
     font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 800;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -167,7 +167,7 @@
 .FooterPolicyLabel {
     flex: 1;
     font-family: "Inter", sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -201,7 +201,7 @@
 
 .FooterContactLink {
     font-family: "Inter", sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.55;
     color: var(--primary-mid);
     text-decoration: none;
@@ -229,7 +229,7 @@
 
 .FooterCopyright {
     font-family: "Inter", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.88);
     margin: 0;
     padding-right: 20px;
@@ -238,7 +238,7 @@
 
 .FooterSlogan {
     font-family: "Montserrat", sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
     color: #ffffff;
     text-align: center;
@@ -285,7 +285,7 @@
     text-decoration: none;
     color: rgba(255, 255, 255, 0.85);
     font-family: "Inter", sans-serif;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 500;
     line-height: 1;
 }
@@ -356,7 +356,7 @@
     }
 
     .FooterBrandDesc {
-        font-size: 12px;
+        font-size: 16px;
         line-height: 1.55;
         margin-bottom: 0;
         max-width: 100%;
@@ -379,11 +379,11 @@
     }
 
     .FooterFeatureText strong {
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .FooterFeatureText span {
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .SiteFooterCol--policy,
@@ -395,7 +395,7 @@
 
     .FooterColHeading {
         margin-bottom: 10px;
-        font-size: 12px;
+        font-size: 16px;
         gap: 6px;
         letter-spacing: 0.05em;
     }
@@ -416,7 +416,7 @@
     }
 
     .FooterPolicyLabel {
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .FooterPolicyArrow {
@@ -438,7 +438,7 @@
     }
 
     .FooterContactLink {
-        font-size: 12px;
+        font-size: 16px;
         line-height: 1.45;
     }
 
@@ -451,7 +451,7 @@
     }
 
     .FooterCopyright {
-        font-size: 10px;
+        font-size: 14px;
         line-height: 1.4;
         padding: 0;
         border-right: none;
@@ -459,7 +459,7 @@
     }
 
     .FooterSlogan {
-        font-size: 11px;
+        font-size: 15px;
         line-height: 1.35;
         padding: 0;
         border-right: none;
@@ -490,7 +490,7 @@
         justify-content: center;
         margin-left: 0;
         margin-top: 2px;
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .FooterPoweredBy img {
@@ -514,7 +514,7 @@
     }
 
     .FooterBrandDesc {
-        font-size: 11px;
+        font-size: 15px;
         line-height: 1.5;
     }
 
@@ -524,7 +524,7 @@
     }
 
     .FooterColHeading {
-        font-size: 11px;
+        font-size: 15px;
         margin-bottom: 8px;
     }
 
@@ -534,7 +534,7 @@
 
     .FooterPolicyLabel,
     .FooterContactLink {
-        font-size: 11px;
+        font-size: 15px;
     }
 
     .FooterContactList {
@@ -547,11 +547,11 @@
     }
 
     .FooterCopyright {
-        font-size: 9px;
+        font-size: 13px;
     }
 
     .FooterSlogan {
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .FooterFeatures {

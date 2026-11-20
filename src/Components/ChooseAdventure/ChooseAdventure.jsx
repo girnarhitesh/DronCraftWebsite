@@ -3,7 +3,6 @@ import "./ChooseAdventure.css";
 import Button from "../Button/Button";
 import {
     IoTimeOutline,
-    IoLocationOutline,
     IoStar,
     IoArrowForward,
     IoPricetagOutline,
@@ -41,6 +40,28 @@ const inclusionIcons = {
     wetsuits: <IoShirtOutline size={20} />,
     droneVideo: <TbDrone size={20} />,
 };
+
+const factIcons = {
+    route: <TbRoute size={13} />,
+    time: <IoTimeOutline size={13} />,
+    rapids: <GiWaveSurfer size={13} />,
+};
+
+function CardWave() {
+    return (
+        <svg
+            className="ChooseCardWave"
+            viewBox="0 0 1440 48"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+        >
+            <path
+                fill="#ffffff"
+                d="M0 28C120 48 240 8 360 28C480 48 600 8 720 28C840 48 960 8 1080 28C1200 48 1320 8 1440 28V48H0Z"
+            />
+        </svg>
+    );
+}
 
 const ChooseAdventure = () => {
     return (
@@ -88,7 +109,7 @@ const ChooseAdventure = () => {
                     {activities.map((activity) => (
                         <article
                             key={activity.id}
-                            className={`ChooseCard${activity.highlighted ? " ChooseCard--highlight" : ""}`}
+                            className={`ChooseCard ChooseCard--${activity.tone}${activity.highlighted ? " ChooseCard--highlight" : ""}`}
                         >
                             <div className="ChooseCardImageWrap">
                                 <img
@@ -98,68 +119,68 @@ const ChooseAdventure = () => {
                                     loading="lazy"
                                 />
 
-                                <span className="ChooseCardDifficulty">
-                                    <GiWaveSurfer size={12} />
-                                    {activity.difficulty}
+                                <span className={`ChooseCardFlag ChooseCardFlag--${activity.tone}`}>
+                                    {activity.highlighted && <IoStar size={10} aria-hidden="true" />}
+                                    {activity.flag}
                                 </span>
-
-                                <span className="ChooseCardDuration">
-                                    <IoTimeOutline size={12} />
-                                    {activity.duration}
-                                </span>
-
-                                {activity.popular && (
-                                    <span className="ChooseCardPopular">
-                                        <IoStar size={11} />
-                                        Most Popular
-                                    </span>
-                                )}
-
-                                {activity.ribbon && (
-                                    <span
-                                        className={`ChooseCardRibbon ChooseCardRibbon--${activity.ribbon.variant}`}
-                                    >
-                                        {activity.ribbon.text}
-                                    </span>
-                                )}
 
                                 <span className="ChooseCardRating">
-                                    <IoStar size={10} />
+                                    <IoStar size={10} aria-hidden="true" />
                                     {activity.rating}
                                 </span>
+
+                                <CardWave />
                             </div>
 
                             <div className="ChooseCardBody">
-                                <h3 className="ChooseCardTitle">{activity.title}</h3>
-
-                                {/* <p className="ChooseCardLocation">
-                                    <IoLocationOutline size={12} aria-hidden="true" />
-                                    {activity.location}
-                                </p> */}
+                                <h3 className="ChooseCardTitle">
+                                    <span className="ChooseCardTitleKm">{activity.km} KM</span>
+                                    {" "}River Rafting
+                                    <span className="ChooseCardTitlePlace">in Rishikesh</span>
+                                </h3>
 
                                 <p className="ChooseCardDesc">{activity.description}</p>
 
-                                <div className="ChooseCardStats">
-                                    <div className="ChooseCardStat">
-                                        <TbRoute size={14} className="ChooseCardStatIcon" aria-hidden="true" />
-                                        <span>
-                                            <strong>{activity.distance}</strong>
-                                            <small>Distance</small>
-                                        </span>
-                                    </div>
-                                    <div className="ChooseCardStat">
-                                        <IoTimeOutline size={14} className="ChooseCardStatIcon" aria-hidden="true" />
-                                        <span>
-                                            <strong>{activity.time}</strong>
-                                            <small>Duration</small>
-                                        </span>
-                                    </div>
+                                <ul className="ChooseCardFacts">
+                                    {activity.facts.map((fact) => (
+                                        <li key={fact.id} className="ChooseCardFact">
+                                            <span className="ChooseCardFactIcon" aria-hidden="true">
+                                                {factIcons[fact.icon]}
+                                            </span>
+                                            <strong>{fact.value}</strong>
+                                            <small>{fact.label}</small>
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                <div className="ChooseRapids">
+                                    <p className="ChooseRapidsLabel">{activity.rapidsLabel}</p>
+                                    <ul className="ChooseRapidsList">
+                                        {activity.rapids.map((rapid) => (
+                                            <li key={rapid.name} className="ChooseRapid">
+                                                {rapid.name}
+                                                {rapid.grade && (
+                                                    <span className="ChooseRapidGrade">{rapid.grade}</span>
+                                                )}
+                                                {rapid.tag && (
+                                                    <span className="ChooseRapidTag">{rapid.tag}</span>
+                                                )}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    {activity.rapidsNote && (
+                                        <p className="ChooseRapidsNote">{activity.rapidsNote}</p>
+                                    )}
                                 </div>
+
+                                <p className="ChooseCardBest">
+                                    <span className="ChooseCardBestLabel">Best for</span>
+                                    <span className="ChooseCardBestText">{activity.bestFor}</span>
+                                </p>
 
                                 <div className="ChooseCardFooter">
                                     <div className="ChooseCardPriceWrap">
                                         <span className="ChooseCardPrice">₹{activity.price}</span>
-                                        {/* <span className="ChooseCardVoucher">{activity.voucher}</span> */}
                                     </div>
 
                                     <Button

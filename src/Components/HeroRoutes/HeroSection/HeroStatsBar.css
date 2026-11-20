@@ -7,8 +7,8 @@
 }
 
 .HeroStatsBarInner {
-    --stat-value-size: clamp(14px, 1.35vw, 17px);
-    --stat-sub-size: clamp(10px, 0.9vw, 11.5px);
+    --stat-value-size: clamp(17px, 1.35vw, 17px);
+    --stat-sub-size: clamp(14px, 0.9vw, 15px);
     --stat-digit-width: 0.62em;
 
     display: grid;
@@ -145,8 +145,8 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 4px;
         padding: 12px;
-        --stat-value-size: 15px;
-        --stat-sub-size: 11px;
+        --stat-value-size: 17px;
+        --stat-sub-size: 15px;
     }
 
     .HeroStatItem {
@@ -186,8 +186,8 @@
         gap: 0;
         padding: 4px 0;
         border-radius: 14px 14px 0 0;
-        --stat-value-size: 15px;
-        --stat-sub-size: 11px;
+        --stat-value-size: 17px;
+        --stat-sub-size: 15px;
     }
 
     .HeroStatItem {

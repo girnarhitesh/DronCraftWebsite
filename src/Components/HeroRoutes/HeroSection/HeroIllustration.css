@@ -225,7 +225,7 @@
 .HIBadgeLabel {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 17px;
     color: #ffffff;
     line-height: 1.15;
     white-space: nowrap;
@@ -233,7 +233,7 @@
 
 .HIBadgeSub {
     font-family: 'Inter', sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.78);
     line-height: 1.3;
